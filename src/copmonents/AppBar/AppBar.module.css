@@ -1,0 +1,41 @@
+.AppBar {
+  display: flex;
+  align-items: center;
+  font-size: large;
+  justify-content: center;
+  background-color: #282c34;
+
+  color: white;
+  padding-top: 10px;
+}
+
+.link {
+  text-decoration: none;
+  font-size: large;
+  color: black;
+  margin-right: 15px;
+  background-color: white;
+  border-radius: 2px;
+}
+
+/* .AppBar {
+  text-align: center;
+  background-color: #282c34;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.link {
+  font-size: large;
+  color: white;
+  text-decoration: none;
+  align-items: center;
+  margin-right: 50px;
+}
+
+.activeStyle {
+  color: teal;
+} */
