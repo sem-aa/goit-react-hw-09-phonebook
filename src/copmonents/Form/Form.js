@@ -21,12 +21,8 @@ export default function Form() {
   };
 
   const dispatch = useDispatch();
-  const onSubmit = useCallback(
-    (nameContact, number) =>
-      dispatch(contactsOperations.addContact(nameContact, number)),
-    [dispatch]
-  );
-
+  const onSubmit = (nameContact, number) =>
+    dispatch(contactsOperations.addContact(nameContact, number));
   const addContact = (event) => {
     event.preventDefault();
     if (nameContact === "" && number === "") {
