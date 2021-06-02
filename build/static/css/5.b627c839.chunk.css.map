@@ -1,0 +1,1 @@
+{"version":3,"sources":["webpack://src/App.module.css"],"names":[],"mappings":"AAAA,gBACE,YAAa,CACb,sBACF,CAEA,kBACE,iBACF,CAEA,iBACE,kBACF","file":"5.b627c839.chunk.css","sourcesContent":[".App {\n  display: flex;\n  justify-content: center;\n}\n\n.views {\n  text-align: center;\n}\n\n.form {\n  margin-bottom: 20px;\n}\n"]}
