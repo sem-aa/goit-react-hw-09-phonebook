@@ -3,6 +3,8 @@ import { useSelector, useDispatch } from "react-redux";
 import { authSelectors, authOperations } from "../../redux/auth";
 import defaultAvatar from "../../icon/icon-login.png";
 import s from "./UserMenu.module.css";
+import {Button} from "react-bootstrap"
+
 
 export default function UserMenu() {
   const dispatch = useDispatch();
@@ -14,10 +16,8 @@ export default function UserMenu() {
   return (
     <div className={s.user}>
       <img className={s.icon} src={defaultAvatar} alt="" width="24" />
-      <span> Welcome, {name} </span>
-      <button className={s.btn} type="button" onClick={onLogout}>
-        Logout
-      </button>
+      <span className={s.text}> Welcome, {name} </span>
+      <Button variant="outline-secondary" type="button" onClick={onLogout}> Logout</Button>
     </div>
   );
 }

@@ -1,7 +1,12 @@
+.user {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 .icon {
-  vertical-align: middle;
+  margin-right: 10px;
 }
 
-.btn {
-  cursor: pointer;
+.text {
+  margin-right: 20px;
 }

@@ -7,10 +7,9 @@ import Logo from "../copmonents/Logo/Logo";
 
 const ContactsViews = () => {
   return (
-    <div className={s.App}>
+    <div className={s.views}>
       <Logo />
-      <Form />
-      <h2 className={s.title}>Contacts</h2>
+      <Form className={s.form}/>
       <Filter />
       <Phonebook />
     </div>

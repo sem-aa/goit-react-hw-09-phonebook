@@ -1,21 +1,22 @@
 .AppBar {
   display: flex;
   align-items: center;
-  font-size: large;
   justify-content: center;
-  background-color: #282c34;
+  margin: 50px;
+  border-bottom: 1px solid #6c757d;
+  padding: 10px;
 
-  color: white;
-  padding-top: 10px;
+  font-size: large;
 }
 
 .link {
-  text-decoration: none;
+  margin-right: 20px;
+  /* text-decoration: none;
   font-size: large;
   color: black;
   margin-right: 15px;
   background-color: white;
-  border-radius: 2px;
+  border-radius: 2px; */
 }
 
 /* .AppBar {

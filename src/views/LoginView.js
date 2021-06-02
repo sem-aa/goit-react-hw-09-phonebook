@@ -2,6 +2,7 @@ import React, { useState, useCallback } from "react";
 import { useDispatch } from "react-redux";
 import { authOperations } from "../redux/auth";
 import s from "../App.module.css";
+import {Form, Button} from 'react-bootstrap'
 
 export default function LoginView() {
   const [email, setEmail] = useState("");
@@ -27,33 +28,27 @@ export default function LoginView() {
   };
   return (
     <div className={s.App}>
-      <h1>Login page</h1>
+  <Form onSubmit={handleSubmit} autoComplete="off" >
+  <Form.Group controlId="formBasicEmail">
+          <Form.Control
+            type="email"
+            name="email"
+            value={email}
+            onChange={handleEmailChange} placeholder="Enter email" />
+    </Form.Group>
 
-      <form onSubmit={handleSubmit} autoComplete="off">
-        <div className={s.field}>
-          <label>
-            email
-            <input
-              type="email"
-              name="email"
-              value={email}
-              onChange={handleEmailChange}
-            />
-          </label>
-        </div>
-        <div className={s.field}>
-          <label>
-            password
-            <input
-              type="password"
+  <Form.Group controlId="formBasicPassword">
+    
+    <Form.Control type="password"
               name="password"
               value={password}
-              onChange={handlePasswordChange}
-            />
-          </label>
-        </div>
-        <button type="submit">Войти</button>
-      </form>
+            onChange={handlePasswordChange}
+            placeholder="Password" />
+  </Form.Group>
+  <Button variant="primary" type="submit">
+    Submit
+  </Button>
+</Form>
     </div>
   );
 }

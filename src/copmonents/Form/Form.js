@@ -1,11 +1,12 @@
-import React, { useState, useCallback } from "react";
+import React, { useState } from "react";
 import s from "./Form.module.css";
 import { CSSTransition } from "react-transition-group";
 import fadeStyle from "../fade/fade.module.css";
 import { useDispatch, useSelector } from "react-redux";
 import { contactsSelectors, contactsOperations } from "../../redux/contacts";
+import {Form, Button} from 'react-bootstrap'
 
-export default function Form() {
+export default function FormInput() {
   const contacts = useSelector(contactsSelectors.getAllContacts);
   const [nameContact, setNameContact] = useState("");
   const [number, setNumber] = useState("");
@@ -61,7 +62,7 @@ export default function Form() {
 
   return (
     <div>
-      <CSSTransition
+<CSSTransition
         in={doubleContact}
         classNames={fadeStyle}
         timeout={500}
@@ -70,7 +71,31 @@ export default function Form() {
         <p className={s.alert}>{message}</p>
       </CSSTransition>
 
-      <form className={s.mainForm} onSubmit={addContact}>
+<Form onSubmit={addContact}>
+  <Form.Group className="mb-3 form" controlId="formBasicEmail">
+    
+    <Form.Control 
+            name="name"
+            type="text"
+            value={nameContact}
+            onChange={changeName} placeholder="Enter name"/>
+      </Form.Group>
+
+  <Form.Group className="mb-3" controlId="formBasicPassword">
+    
+    <Form.Control name="number"
+            type="text"
+            value={number}
+            onChange={changeNumber} placeholder="Enter number" />
+  </Form.Group>
+   <Button variant="primary" type="submit">
+    Add contact
+  </Button>
+</Form>
+
+      
+
+      {/* <form className={s.mainForm} onSubmit={addContact}>
         <label className={s.name}>
           Name{" "}
           <input
@@ -95,7 +120,9 @@ export default function Form() {
         <button className={s.addContact} type="submit">
           Add Contact
         </button>
-      </form>
+      </form> */}
+
+
     </div>
   );
 }

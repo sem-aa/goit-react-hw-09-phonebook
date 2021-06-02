@@ -1,4 +1,4 @@
-.find {
+/* .find {
   font-size: small;
 }
 
@@ -17,4 +17,8 @@
 .inputFind:hover,
 .inputFind:focus {
   border: 1px solid white;
+} */
+
+.filter {
+  margin-top: 20px;
 }

@@ -5,6 +5,8 @@ import AppBar from "./copmonents/AppBar/AppBar";
 import { authOperations } from "./redux/auth";
 import PrivateRoute from "./copmonents/PrivateRoute/PrivateRoute";
 import PublicRoute from "./copmonents/PublicRoute/PublicRoute";
+import 'bootstrap/dist/css/bootstrap.min.css'
+import {Container} from "react-bootstrap"
 
 const RegisterView = lazy(() => import("./views/RegisterView"));
 const LoginView = lazy(() => import("./views/LoginView"));
@@ -18,7 +20,7 @@ export default function App() {
   }, [dispatch]);
 
   return (
-    <>
+    <Container>
       <AppBar />
       <Suspense fallback={<p>Загружаем...</p>}>
         <Switch>
@@ -33,7 +35,7 @@ export default function App() {
           </PrivateRoute>
         </Switch>
       </Suspense>
-    </>
+    </Container>
   );
 }
 

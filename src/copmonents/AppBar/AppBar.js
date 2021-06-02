@@ -5,19 +5,17 @@ import Auth from "../Auth/Auth";
 import UserMenu from "../UserMenu/UserMenu";
 import { authSelectors } from "../../redux/auth";
 import s from "./AppBar.module.css";
+import {Button} from 'react-bootstrap'
 
 export default function AppBar() {
   const isLoggedIn = useSelector(authSelectors.getIsAuthenticated);
   return (
-    <div className={s.AppBar}>
+    <div className={s.AppBar}> 
       {isLoggedIn && (
-        <NavLink
-          className={s.link}
+        <NavLink className={s.link}
           to="/contacts"
-          exat
-          activeClassName={s.activeStyle}
-        >
-          Contacts
+          exat>
+          <Button variant="outline-secondary"> Contacts</Button>
         </NavLink>
       )}
       {isLoggedIn ? <UserMenu /> : <Auth />}

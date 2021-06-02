@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { CSSTransition } from "react-transition-group";
 import fadeStyle from "../fade/fade.module.css";
 import { contactsSelectors, changeFilter } from "../../redux/contacts";
+import {Form} from "react-bootstrap"
 
 export default function Filter() {
   const dispatch = useDispatch();
@@ -20,7 +21,7 @@ export default function Filter() {
         timeout={500}
         unmountOnExit
       >
-        <label className={s.find}>
+        {/* <label className={s.find}>
           Find number
           <input
             className={s.inputFind}
@@ -28,7 +29,15 @@ export default function Filter() {
             value={value}
             onChange={onChange}
           ></input>
-        </label>
+        </label> */}
+
+  <Form.Group className="mb-3" controlId="formBasicFind">
+    
+    <Form.Control className={s.filter}
+            type="text"
+            value={value}
+            onChange={onChange} placeholder="Find contact"/>
+      </Form.Group>
       </CSSTransition>
     </>
   );

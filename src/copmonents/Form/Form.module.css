@@ -1,13 +1,13 @@
-.mainForm {
+/* .mainForm {
   display: inline;
-}
+} */
 
-.name,
+/* .name,
 .number {
   font-size: small;
-}
+} */
 
-.inputName,
+/* .inputName,
 .inputNumber {
   width: 80px;
   height: 15px;
@@ -25,11 +25,11 @@
 .inputNumber:focus,
 .inputNumber:hover {
   border: 1px solid white;
-}
+} */
 
-.addContact {
+/* .addContact {
   cursor: pointer;
-}
+} */
 
 .alert {
   background-color: red;

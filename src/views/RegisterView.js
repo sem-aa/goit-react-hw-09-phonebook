@@ -2,6 +2,7 @@ import React, { useState, useCallback } from "react";
 import { useDispatch } from "react-redux";
 import { authOperations } from "../redux/auth";
 import s from "../App.module.css";
+import {Form, Button} from 'react-bootstrap'
 
 export default function RegisterView() {
   const [name, setName] = useState("");
@@ -34,39 +35,30 @@ export default function RegisterView() {
 
   return (
     <div className={s.App}>
-      <h1>Registration page</h1>
-
-      <form onSubmit={handleSubmit} autoComplete="off">
-        <div className={s.field}>
-          <label>
-            name
-            <input type="text" name="name" value={name} onChange={changeName} />
-          </label>
-        </div>
-        <div className={s.field}>
-          <label>
-            email
-            <input
-              type="email"
+    <Form onSubmit={handleSubmit} autoComplete="off">
+    <Form.Group controlId="formBasicName">
+        <Form.Control type="text" name="name" value={name} onChange={changeName} placeholder="Enter name" />
+        </Form.Group>
+        <Form.Group controlId="formBasicEmail">
+    <Form.Control type="email"
               name="email"
               value={email}
-              onChange={changeEmail}
-            />
-          </label>
-        </div>
-        <div className={s.field}>
-          <label>
-            password
-            <input
-              type="password"
+            onChange={changeEmail}
+            placeholder="Enter email" />
+    </Form.Group>
+  <Form.Group controlId="formBasicPassword">
+    
+          <Form.Control
+            type="password"
               name="password"
               value={password}
-              onChange={changePassword}
-            />
-          </label>
-        </div>
-        <button type="submit">Зарегистрироваться</button>
-      </form>
+            onChange={changePassword}
+            placeholder="Password" />
+  </Form.Group>
+  <Button variant="primary" type="submit">
+    Submit
+  </Button>
+</Form>
     </div>
   );
 }
